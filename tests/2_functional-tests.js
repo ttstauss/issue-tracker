@@ -67,7 +67,6 @@ suite('Functional Tests', function() {
               created_by: 'Functional Test - Missing required fields'
             })
             .end(function(err, res) {
-              console.log(res.body)
               assert.equal(res.status, 200)
               assert.equal(res.body, 'missing required field')
               done()

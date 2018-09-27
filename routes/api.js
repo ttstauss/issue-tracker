@@ -189,11 +189,11 @@ module.exports = function (app) {
       const issueId = req.body._id
       const {issue_title, issue_text, created_by, assigned_to, status_text, open = true} = req.body
       const updates = {}
-      if (issue_title !== '') updates.issue_title = issue_title
-      if (issue_text !== '') updates.issue_text = issue_text
-      if (created_by !== '') updates.created_by = created_by
-      if (assigned_to !== '') updates.assigned_to = assigned_to
-      if (status_text !== '') updates.status_text = status_text
+      if (issue_title !== '' && issue_title !== undefined) { updates.issue_title = issue_title }
+      if (issue_text !== '' && issue_text !== undefined) { updates.issue_text = issue_text }
+      if (created_by !== '' && created_by !== undefined) { updates.created_by = created_by }
+      if (assigned_to !== '' && assigned_to !== undefined) { updates.assigned_to = assigned_to }
+      if (status_text !== '' && status_text !== undefined) { updates.status_text = status_text }
       updates.open = open
       updates.updated_on = new Date()
       if (issue_title === '' &&
